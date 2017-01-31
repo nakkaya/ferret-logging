@@ -10,17 +10,17 @@
       "INITIALIZE_EASYLOGGINGPP"
       "el::Configurations c;
        c.setToDefault();
-       c.parseFromText(txt.to<std::string>());
+       c.parseFromText(string::to<std::string>(txt));
        el::Loggers::reconfigureAllLoggers(c);"))
 
 (defnative info [msg]
   (on "defined FERRET_STD_LIB"
-      "LOG(INFO) << msg.to<std::string>();"))
+      "LOG(INFO) << string::to<std::string>(msg);"))
 
 (defnative warn [msg]
   (on "defined FERRET_STD_LIB"
-      "LOG(WARNING) << msg.to<std::string>();"))
+      "LOG(WARNING) << string::to<std::string>(msg);"))
 
 (defnative error [msg]
   (on "defined FERRET_STD_LIB"
-      "LOG(ERROR) << msg.to<std::string>();"))
+      "LOG(ERROR) << string::to<std::string>(msg);"))

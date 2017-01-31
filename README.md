@@ -3,4 +3,13 @@ ferret-logging
 
 easyloggingpp Bindigns For Ferret.
 
-For Usage See [solarcar-tracker](https://git.nakkaya.com/nakkaya/solarcar-tracker)
+#### Usage
+
+    (require '[ferret-logging.core :as log])
+
+    (log/init-from-text
+     "*GLOBAL:\\nTO_FILE = false\\nFORMAT = [%datetime{%Y.%M.%d-%H.%m.%s}] - %level - %msg\\n")
+
+    (log/info  "ingo")
+    (log/warn  "warning")
+    (log/error "error")
